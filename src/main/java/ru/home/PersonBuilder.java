@@ -29,14 +29,9 @@ public class PersonBuilder {
         return this;
     }
 
-//    public PersonBuilder setChildName(String childName) {
-//        this.childName = childName;
-//        return this;
-//    }
-
     public Person build() {
         if (name == null || surname == null || age < -1 || address == null) {
-            throw new IllegalStateException("Вы указали недостаточно данных для создания обекта Person");
+            throw new IllegalStateException("Вы указали недостаточно данных для создания объекта Person");
         } else return new Person(name, surname, age, address);
     }
 

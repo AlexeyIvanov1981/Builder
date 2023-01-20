@@ -5,7 +5,6 @@ public class Person {
     private final String SURNAME;
     private int age;
     private String address;
-    private String childName;
 
 
     public Person(String name, String surname, int age, String address) {
@@ -16,11 +15,9 @@ public class Person {
     }
 
     public PersonBuilder newChildBuilder() {
-        return new Person();
-    }
-
-    public void setChildName(String childName) {
-        this.NAME = childName;
+        return new PersonBuilder()
+                .setSurname(this.getSURNAME())
+                .setAddress(this.getAddress());
     }
 
     public void happyBirthday() {
@@ -60,9 +57,9 @@ public class Person {
     @Override
     public String toString() {
         return "Person:" +
-                "name =" + NAME +
-                ", surname =" + SURNAME +
-                ", age =" + age +
-                ", address =" + address;
+                "name: " + NAME +
+                ", surname: " + SURNAME +
+                ", age: " + age +
+                ", address: " + address;
     }
 }
