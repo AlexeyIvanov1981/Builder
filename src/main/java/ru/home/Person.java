@@ -1,19 +1,23 @@
 package ru.home;
 
 public class Person {
-    protected String name;
-    protected String surname;
-    protected int age;
-    protected String cities;
+    private final String NAME;
+    private final String SURNAME;
+    private int age;
+    private String cities;
 //    protected final Cities CITIES;
 
-
     public Person(String name, String surname, int age, String cities) {
-        this.name = name;
-        this.surname = surname;
+        this.NAME = name;
+        this.SURNAME = surname;
         this.age = age;
         this.cities = cities;
     }
+
+    public PersonBuilder newChildBuilder() {
+        
+    }
+
 
     public void happyBirthday() {
         this.age++;
@@ -33,12 +37,12 @@ public class Person {
         return false;
     }
 
-    public String getName() {
-        return name;
+    public String getNAME() {
+        return NAME;
     }
 
-    public String getSurname() {
-        return surname;
+    public String getSURNAME() {
+        return SURNAME;
     }
 
     public int getAge() {
@@ -47,5 +51,14 @@ public class Person {
 
     public String getCities() {
         return cities;
+    }
+
+    @Override
+    public String toString() {
+        return "Person:" +
+                "name =" + NAME +
+                ", surname =" + SURNAME +
+                ", age =" + age +
+                ", cities =" + cities;
     }
 }
