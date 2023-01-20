@@ -1,15 +1,16 @@
 package ru.home;
 
 public class Person {
-    protected final String NAME;
-    protected final String SURNAME;
+    protected String name;
+    protected String surname;
     protected int age;
     protected String cities;
 //    protected final Cities CITIES;
 
+
     public Person(String name, String surname, int age, String cities) {
-        NAME = name;
-        SURNAME = surname;
+        this.name = name;
+        this.surname = surname;
         this.age = age;
         this.cities = cities;
     }
@@ -26,9 +27,25 @@ public class Person {
     }
 
     public boolean hasAddress() {
-        if (this.cities != null){
+        if (this.cities != null) {
             return true;
         }
         return false;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public String getCities() {
+        return cities;
     }
 }
