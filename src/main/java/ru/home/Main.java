@@ -13,5 +13,9 @@ public class Main {
                 .setName("Антошка")
                 .build();
         System.out.println("У " + mom + " есть сын, " + son);
+        mom.happyBirthday();
+        System.out.println(mom);
+        System.out.println(mom.hasAddress());
+        System.out.println(mom.hasAge());
     }
 }
