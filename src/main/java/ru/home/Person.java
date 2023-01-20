@@ -17,7 +17,6 @@ public class Person {
     public PersonBuilder newChildBuilder() {
         return new PersonBuilder()
                 .setSurname(getSURNAME())
-                .setAge(0)
                 .setAddress(getAddress());
     }
 
