@@ -4,34 +4,38 @@ public class Person {
     private final String NAME;
     private final String SURNAME;
     private int age;
-    private String cities;
-//    protected final Cities CITIES;
+    private String address;
+    private String childName;
 
-    public Person(String name, String surname, int age, String cities) {
+
+    public Person(String name, String surname, int age, String address) {
         this.NAME = name;
         this.SURNAME = surname;
         this.age = age;
-        this.cities = cities;
+        this.address = address;
     }
 
     public PersonBuilder newChildBuilder() {
-        
+        return new Person();
     }
 
+    public void setChildName(String childName) {
+        this.NAME = childName;
+    }
 
     public void happyBirthday() {
         this.age++;
     }
 
     public boolean hasAge() {
-        if (this.age > 0) {
+        if (this.age >= 0) {
             return true;
         }
         return false;
     }
 
     public boolean hasAddress() {
-        if (this.cities != null) {
+        if (this.address != null) {
             return true;
         }
         return false;
@@ -49,8 +53,8 @@ public class Person {
         return age;
     }
 
-    public String getCities() {
-        return cities;
+    public String getAddress() {
+        return address;
     }
 
     @Override
@@ -59,6 +63,6 @@ public class Person {
                 "name =" + NAME +
                 ", surname =" + SURNAME +
                 ", age =" + age +
-                ", cities =" + cities;
+                ", address =" + address;
     }
 }

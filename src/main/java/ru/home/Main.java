@@ -2,6 +2,16 @@ package ru.home;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        Person mom = new PersonBuilder()
+                .setName("Анна")
+                .setSurname("Вольф")
+                .setAge(31)
+                .setAddress("Сидней")
+                .build();
+        System.out.println(mom);
+        Person son = mom.newChildBuilder()
+                .setName("Антошка")
+                .build();
+        System.out.println("У " + mom + " есть сын, " + son);
     }
 }
