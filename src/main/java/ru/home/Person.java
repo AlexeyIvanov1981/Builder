@@ -16,8 +16,9 @@ public class Person {
 
     public PersonBuilder newChildBuilder() {
         return new PersonBuilder()
-                .setSurname(this.getSURNAME())
-                .setAddress(this.getAddress());
+                .setSurname(getSURNAME())
+                .setAge(0)
+                .setAddress(getAddress());
     }
 
     public void happyBirthday() {
@@ -56,7 +57,7 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Person:" +
+        return "Person: " +
                 "name: " + NAME +
                 ", surname: " + SURNAME +
                 ", age: " + age +
